@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.34.0">
+    <meta name="project" content="Pedidos v0.1.0">
+
+
+    <title>Pedidos.CarritoDeCompras — Pedidos v0.1.0</title>
+    <link rel="stylesheet" href="dist/html-elixir-K5ICTFVY.css" />
+
+
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-K7URE6B4.js"></script>
+    <script src="dist/sidebar_items-3B4416CD.js"></script>
+    <script src="docs_config.js"></script>
+    <script async src="dist/html-Q4PYR6ZR.js"></script>
+
+  </head>
+  <body data-type="modules" class="page-module">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="body-wrapper">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+        <a href="https://pedidosapp.gigalixirapp.com/productos" class="sidebar-projectImage">
+          <img src="assets/logo.svg" alt="Pedidos" />
+        </a>
+
+      <div>
+        <a href="https://pedidosapp.gigalixirapp.com/productos" class="sidebar-projectName" translate="no">
+Pedidos
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v0.1.0
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-listNav" class="sidebar-listNav" role="tablist">
+      <li>
+        <button id="extras-list-tab-button" role="tab" data-type="extras" aria-controls="extras-tab-panel" aria-selected="true" tabindex="0">
+Pages
+        </button>
+      </li>
+
+        <li>
+          <button id="modules-list-tab-button" role="tab" data-type="modules" aria-controls="modules-tab-panel" aria-selected="false" tabindex="-1">
+            Modules
+          </button>
+        </li>
+
+
+    </ul>
+  </div>
+
+  <div id="extras-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="extras-list-tab-button">
+    <ul id="extras-full-list" class="full-list"></ul>
+  </div>
+
+    <div id="modules-tab-panel" class="sidebar-tabpanel" role="tabpanel" aria-labelledby="modules-list-tab-button" hidden>
+      <ul id="modules-full-list" class="full-list"></ul>
+    </div>
+
+
+</nav>
+
+<main class="content">
+  <output role="status" id="toast"></output>
+
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of Pedidos</span>
+            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          </label>
+          <button type="submit" class="search-button" aria-label="Submit Search">
+            <i class="ri-search-2-line ri-lg" aria-hidden="true" title="Submit search"></i>
+          </button>
+          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+            <i class="ri-close-line ri-lg" title="Cancel search"></i>
+          </button>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L1" title="View Source" class="icon-action" rel="help">
+        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        <span class="sr-only">View Source</span>
+      </a>
+
+    <span translate="no">Pedidos.CarritoDeCompras</span> 
+    <small class="app-vsn" translate="no">(Pedidos v0.1.0)</small>
+
+  </h1>
+
+
+    <section id="moduledoc">
+<p>The CarritoDeCompras context.</p>
+    </section>
+
+</div>
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Summary</span>
+    </h1>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#add_item_to_cart/2" data-no-tooltip translate="no">add_item_to_cart(carrito, producto_id)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#change_carrito/2" data-no-tooltip translate="no">change_carrito(carrito, attrs \\ %{})</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns an <code class="inline">%Ecto.Changeset{}</code> for tracking carrito changes.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#change_carrito_item/2" data-no-tooltip translate="no">change_carrito_item(carrito_item, attrs \\ %{})</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns an <code class="inline">%Ecto.Changeset{}</code> for tracking carrito_item changes.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#create_carrito/1" data-no-tooltip translate="no">create_carrito(user_uuid)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Creates a carrito.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#create_carrito_item/1" data-no-tooltip translate="no">create_carrito_item(attrs \\ %{})</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Creates a carrito_item.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#delete_carrito/1" data-no-tooltip translate="no">delete_carrito(carrito)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Deletes a carrito.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#delete_carrito_item/1" data-no-tooltip translate="no">delete_carrito_item(carrito_item)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Deletes a carrito_item.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_carrito!/1" data-no-tooltip translate="no">get_carrito!(id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Gets a single carrito.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_carrito_item!/1" data-no-tooltip translate="no">get_carrito_item!(id)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Gets a single carrito_item.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#get_cart_by_user_uuid/1" data-no-tooltip translate="no">get_cart_by_user_uuid(user_uuid)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#list_carrito_items/0" data-no-tooltip translate="no">list_carrito_items()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns the list of carrito_items.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#list_carritos/0" data-no-tooltip translate="no">list_carritos()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns the list of carritos.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#prune_cart_items/1" data-no-tooltip translate="no">prune_cart_items(carrito)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#remove_item_from_cart/2" data-no-tooltip translate="no">remove_item_from_cart(carrito, producto_id)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#total_cart_price/1" data-no-tooltip translate="no">total_cart_price(carrito)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#total_item_price/1" data-no-tooltip translate="no">total_item_price(item)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#update_carrito/2" data-no-tooltip translate="no">update_carrito(carrito, attrs)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Updates a carrito.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#update_carrito_item/2" data-no-tooltip translate="no">update_carrito_item(carrito_item, attrs)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Updates a carrito_item.</p></div>
+
+    </div>
+
+</div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Functions</span>
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="add_item_to_cart/2">
+
+  <div class="detail-header">
+    <a href="#add_item_to_cart/2" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">add_item_to_cart(carrito, producto_id)</h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L64" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="change_carrito/2">
+
+    <span id="change_carrito/1"></span>
+
+  <div class="detail-header">
+    <a href="#change_carrito/2" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">change_carrito(carrito, attrs \\ %{})</h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L144" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Returns an <code class="inline">%Ecto.Changeset{}</code> for tracking carrito changes.</p><h2 id="change_carrito/2-examples" class="section-heading">
+  <a href="#change_carrito/2-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">change_carrito</span><span class="p" data-group-id="1809207979-1">(</span><span class="n">carrito</span><span class="p" data-group-id="1809207979-1">)</span><span class="w">
+</span><span class="p" data-group-id="1809207979-2">%</span><span class="nc" data-group-id="1809207979-2">Ecto.Changeset</span><span class="p" data-group-id="1809207979-2">{</span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1809207979-3">%</span><span class="nc" data-group-id="1809207979-3">Carrito</span><span class="p" data-group-id="1809207979-3">{</span><span class="p" data-group-id="1809207979-3">}</span><span class="p" data-group-id="1809207979-2">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="change_carrito_item/2">
+
+    <span id="change_carrito_item/1"></span>
+
+  <div class="detail-header">
+    <a href="#change_carrito_item/2" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">change_carrito_item(carrito_item, attrs \\ %{})</h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L240" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Returns an <code class="inline">%Ecto.Changeset{}</code> for tracking carrito_item changes.</p><h2 id="change_carrito_item/2-examples" class="section-heading">
+  <a href="#change_carrito_item/2-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">change_carrito_item</span><span class="p" data-group-id="1298492769-1">(</span><span class="n">carrito_item</span><span class="p" data-group-id="1298492769-1">)</span><span class="w">
+</span><span class="p" data-group-id="1298492769-2">%</span><span class="nc" data-group-id="1298492769-2">Ecto.Changeset</span><span class="p" data-group-id="1298492769-2">{</span><span class="ss">data</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1298492769-3">%</span><span class="nc" data-group-id="1298492769-3">CarritoItem</span><span class="p" data-group-id="1298492769-3">{</span><span class="p" data-group-id="1298492769-3">}</span><span class="p" data-group-id="1298492769-2">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="create_carrito/1">
+
+  <div class="detail-header">
+    <a href="#create_carrito/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_carrito(user_uuid)</h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L52" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Creates a carrito.</p><h2 id="create_carrito/1-examples" class="section-heading">
+  <a href="#create_carrito/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">create_carrito</span><span class="p" data-group-id="3383249165-1">(</span><span class="p" data-group-id="3383249165-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p" data-group-id="3383249165-2">}</span><span class="p" data-group-id="3383249165-1">)</span><span class="w">
+</span><span class="p" data-group-id="3383249165-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3383249165-4">%</span><span class="nc" data-group-id="3383249165-4">Carrito</span><span class="p" data-group-id="3383249165-4">{</span><span class="p" data-group-id="3383249165-4">}</span><span class="p" data-group-id="3383249165-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">create_carrito</span><span class="p" data-group-id="3383249165-5">(</span><span class="p" data-group-id="3383249165-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="3383249165-6">}</span><span class="p" data-group-id="3383249165-5">)</span><span class="w">
+</span><span class="p" data-group-id="3383249165-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3383249165-8">%</span><span class="nc" data-group-id="3383249165-8">Ecto.Changeset</span><span class="p" data-group-id="3383249165-8">{</span><span class="p" data-group-id="3383249165-8">}</span><span class="p" data-group-id="3383249165-7">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="create_carrito_item/1">
+
+    <span id="create_carrito_item/0"></span>
+
+  <div class="detail-header">
+    <a href="#create_carrito_item/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_carrito_item(attrs \\ %{})</h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L191" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Creates a carrito_item.</p><h2 id="create_carrito_item/1-examples" class="section-heading">
+  <a href="#create_carrito_item/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">create_carrito_item</span><span class="p" data-group-id="2058475484-1">(</span><span class="p" data-group-id="2058475484-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p" data-group-id="2058475484-2">}</span><span class="p" data-group-id="2058475484-1">)</span><span class="w">
+</span><span class="p" data-group-id="2058475484-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2058475484-4">%</span><span class="nc" data-group-id="2058475484-4">CarritoItem</span><span class="p" data-group-id="2058475484-4">{</span><span class="p" data-group-id="2058475484-4">}</span><span class="p" data-group-id="2058475484-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">create_carrito_item</span><span class="p" data-group-id="2058475484-5">(</span><span class="p" data-group-id="2058475484-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="2058475484-6">}</span><span class="p" data-group-id="2058475484-5">)</span><span class="w">
+</span><span class="p" data-group-id="2058475484-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2058475484-8">%</span><span class="nc" data-group-id="2058475484-8">Ecto.Changeset</span><span class="p" data-group-id="2058475484-8">{</span><span class="p" data-group-id="2058475484-8">}</span><span class="p" data-group-id="2058475484-7">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="delete_carrito/1">
+
+  <div class="detail-header">
+    <a href="#delete_carrito/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">delete_carrito(carrito)</h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L131" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Deletes a carrito.</p><h2 id="delete_carrito/1-examples" class="section-heading">
+  <a href="#delete_carrito/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">delete_carrito</span><span class="p" data-group-id="5815061482-1">(</span><span class="n">carrito</span><span class="p" data-group-id="5815061482-1">)</span><span class="w">
+</span><span class="p" data-group-id="5815061482-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5815061482-3">%</span><span class="nc" data-group-id="5815061482-3">Carrito</span><span class="p" data-group-id="5815061482-3">{</span><span class="p" data-group-id="5815061482-3">}</span><span class="p" data-group-id="5815061482-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">delete_carrito</span><span class="p" data-group-id="5815061482-4">(</span><span class="n">carrito</span><span class="p" data-group-id="5815061482-4">)</span><span class="w">
+</span><span class="p" data-group-id="5815061482-5">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5815061482-6">%</span><span class="nc" data-group-id="5815061482-6">Ecto.Changeset</span><span class="p" data-group-id="5815061482-6">{</span><span class="p" data-group-id="5815061482-6">}</span><span class="p" data-group-id="5815061482-5">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="delete_carrito_item/1">
+
+  <div class="detail-header">
+    <a href="#delete_carrito_item/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">delete_carrito_item(carrito_item)</h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L227" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Deletes a carrito_item.</p><h2 id="delete_carrito_item/1-examples" class="section-heading">
+  <a href="#delete_carrito_item/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">delete_carrito_item</span><span class="p" data-group-id="6143891017-1">(</span><span class="n">carrito_item</span><span class="p" data-group-id="6143891017-1">)</span><span class="w">
+</span><span class="p" data-group-id="6143891017-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6143891017-3">%</span><span class="nc" data-group-id="6143891017-3">CarritoItem</span><span class="p" data-group-id="6143891017-3">{</span><span class="p" data-group-id="6143891017-3">}</span><span class="p" data-group-id="6143891017-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">delete_carrito_item</span><span class="p" data-group-id="6143891017-4">(</span><span class="n">carrito_item</span><span class="p" data-group-id="6143891017-4">)</span><span class="w">
+</span><span class="p" data-group-id="6143891017-5">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6143891017-6">%</span><span class="nc" data-group-id="6143891017-6">Ecto.Changeset</span><span class="p" data-group-id="6143891017-6">{</span><span class="p" data-group-id="6143891017-6">}</span><span class="p" data-group-id="6143891017-5">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="get_carrito!/1">
+
+  <div class="detail-header">
+    <a href="#get_carrito!/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_carrito!(id)</h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L38" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Gets a single carrito.</p><p>Raises <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.NoResultsError.html"><code class="inline">Ecto.NoResultsError</code></a> if the Carrito does not exist.</p><h2 id="get_carrito!/1-examples" class="section-heading">
+  <a href="#get_carrito!/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">get_carrito!</span><span class="p" data-group-id="5560688747-1">(</span><span class="mi">123</span><span class="p" data-group-id="5560688747-1">)</span><span class="w">
+</span><span class="p" data-group-id="5560688747-2">%</span><span class="nc" data-group-id="5560688747-2">Carrito</span><span class="p" data-group-id="5560688747-2">{</span><span class="p" data-group-id="5560688747-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">get_carrito!</span><span class="p" data-group-id="5560688747-3">(</span><span class="mi">456</span><span class="p" data-group-id="5560688747-3">)</span><span class="w">
+</span><span class="gt">** (Ecto.NoResultsError)</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="get_carrito_item!/1">
+
+  <div class="detail-header">
+    <a href="#get_carrito_item!/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_carrito_item!(id)</h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L177" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Gets a single carrito_item.</p><p>Raises <a href="https://hexdocs.pm/ecto/3.11.2/Ecto.NoResultsError.html"><code class="inline">Ecto.NoResultsError</code></a> if the Carrito item does not exist.</p><h2 id="get_carrito_item!/1-examples" class="section-heading">
+  <a href="#get_carrito_item!/1-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">get_carrito_item!</span><span class="p" data-group-id="5817970581-1">(</span><span class="mi">123</span><span class="p" data-group-id="5817970581-1">)</span><span class="w">
+</span><span class="p" data-group-id="5817970581-2">%</span><span class="nc" data-group-id="5817970581-2">CarritoItem</span><span class="p" data-group-id="5817970581-2">{</span><span class="p" data-group-id="5817970581-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">get_carrito_item!</span><span class="p" data-group-id="5817970581-3">(</span><span class="mi">456</span><span class="p" data-group-id="5817970581-3">)</span><span class="w">
+</span><span class="gt">** (Ecto.NoResultsError)</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="get_cart_by_user_uuid/1">
+
+  <div class="detail-header">
+    <a href="#get_cart_by_user_uuid/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_cart_by_user_uuid(user_uuid)</h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L244" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="list_carrito_items/0">
+
+  <div class="detail-header">
+    <a href="#list_carrito_items/0" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_carrito_items()</h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L159" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Returns the list of carrito_items.</p><h2 id="list_carrito_items/0-examples" class="section-heading">
+  <a href="#list_carrito_items/0-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">list_carrito_items</span><span class="p" data-group-id="9257977018-1">(</span><span class="p" data-group-id="9257977018-1">)</span><span class="w">
+</span><span class="p" data-group-id="9257977018-2">[</span><span class="p" data-group-id="9257977018-3">%</span><span class="nc" data-group-id="9257977018-3">CarritoItem</span><span class="p" data-group-id="9257977018-3">{</span><span class="p" data-group-id="9257977018-3">}</span><span class="p">,</span><span class="w"> </span><span class="n">...</span><span class="p" data-group-id="9257977018-2">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="list_carritos/0">
+
+  <div class="detail-header">
+    <a href="#list_carritos/0" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_carritos()</h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L20" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Returns the list of carritos.</p><h2 id="list_carritos/0-examples" class="section-heading">
+  <a href="#list_carritos/0-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">list_carritos</span><span class="p" data-group-id="6927281152-1">(</span><span class="p" data-group-id="6927281152-1">)</span><span class="w">
+</span><span class="p" data-group-id="6927281152-2">[</span><span class="p" data-group-id="6927281152-3">%</span><span class="nc" data-group-id="6927281152-3">Carrito</span><span class="p" data-group-id="6927281152-3">{</span><span class="p" data-group-id="6927281152-3">}</span><span class="p">,</span><span class="w"> </span><span class="n">...</span><span class="p" data-group-id="6927281152-2">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="prune_cart_items/1">
+
+  <div class="detail-header">
+    <a href="#prune_cart_items/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">prune_cart_items(carrito)</h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L269" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="remove_item_from_cart/2">
+
+  <div class="detail-header">
+    <a href="#remove_item_from_cart/2" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">remove_item_from_cart(carrito, producto_id)</h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L77" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="total_cart_price/1">
+
+  <div class="detail-header">
+    <a href="#total_cart_price/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">total_cart_price(carrito)</h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L261" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="total_item_price/1">
+
+  <div class="detail-header">
+    <a href="#total_item_price/1" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">total_item_price(item)</h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L257" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="update_carrito/2">
+
+  <div class="detail-header">
+    <a href="#update_carrito/2" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update_carrito(carrito, attrs)</h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L101" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Updates a carrito.</p><h2 id="update_carrito/2-examples" class="section-heading">
+  <a href="#update_carrito/2-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">update_carrito</span><span class="p" data-group-id="2553608470-1">(</span><span class="n">carrito</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2553608470-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">new_value</span><span class="p" data-group-id="2553608470-2">}</span><span class="p" data-group-id="2553608470-1">)</span><span class="w">
+</span><span class="p" data-group-id="2553608470-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2553608470-4">%</span><span class="nc" data-group-id="2553608470-4">Carrito</span><span class="p" data-group-id="2553608470-4">{</span><span class="p" data-group-id="2553608470-4">}</span><span class="p" data-group-id="2553608470-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">update_carrito</span><span class="p" data-group-id="2553608470-5">(</span><span class="n">carrito</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2553608470-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="2553608470-6">}</span><span class="p" data-group-id="2553608470-5">)</span><span class="w">
+</span><span class="p" data-group-id="2553608470-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2553608470-8">%</span><span class="nc" data-group-id="2553608470-8">Ecto.Changeset</span><span class="p" data-group-id="2553608470-8">{</span><span class="p" data-group-id="2553608470-8">}</span><span class="p" data-group-id="2553608470-7">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="update_carrito_item/2">
+
+  <div class="detail-header">
+    <a href="#update_carrito_item/2" class="detail-link" data-no-tooltip title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update_carrito_item(carrito_item, attrs)</h1>
+
+      <a href="https://github.com/Al4trist3/pedidos/blob/main/lib/pedidos/carrito_de_compras.ex#L209" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Updates a carrito_item.</p><h2 id="update_carrito_item/2-examples" class="section-heading">
+  <a href="#update_carrito_item/2-examples" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Examples</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">update_carrito_item</span><span class="p" data-group-id="1257085827-1">(</span><span class="n">carrito_item</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1257085827-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">new_value</span><span class="p" data-group-id="1257085827-2">}</span><span class="p" data-group-id="1257085827-1">)</span><span class="w">
+</span><span class="p" data-group-id="1257085827-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1257085827-4">%</span><span class="nc" data-group-id="1257085827-4">CarritoItem</span><span class="p" data-group-id="1257085827-4">{</span><span class="p" data-group-id="1257085827-4">}</span><span class="p" data-group-id="1257085827-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">update_carrito_item</span><span class="p" data-group-id="1257085827-5">(</span><span class="n">carrito_item</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1257085827-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="1257085827-6">}</span><span class="p" data-group-id="1257085827-5">)</span><span class="w">
+</span><span class="p" data-group-id="1257085827-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1257085827-8">%</span><span class="nc" data-group-id="1257085827-8">Ecto.Changeset</span><span class="p" data-group-id="1257085827-8">{</span><span class="p" data-group-id="1257085827-8">}</span><span class="p" data-group-id="1257085827-7">}</span></code></pre>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+    <footer class="footer">
+      <p>
+
+        <span class="line">
+          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+            Search HexDocs
+          </button>
+
+            <a href="Pedidos.epub" title="ePub version">
+              Download ePub version
+            </a>
+
+        </span>
+      </p>
+
+      <p class="built-using">
+        Built using
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.34.0) for the
+
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+      </p>
+
+    </footer>
+  </div>
+</main>
+</div>
+
+  </body>
+</html>
